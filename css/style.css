@@ -1,0 +1,463 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar Styles */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+.navbar:hover {
+    background-color: #444;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: color 0.3s;
+}
+
+.logo:hover {
+    color: #129df3;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    transition: transform 0.5s ease-in;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #129df3;
+}
+
+.nav-links a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #129df3;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 21px;
+    transition: transform 0.3s;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 10px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Animation for Burger */
+.burger.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.burger.toggle .line2 {
+    opacity: 0;
+}
+
+.burger.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        background-color: #333;
+        transition: transform 0.5s ease-in;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .nav-links.nav-active {
+        transform: translateX(100%);
+    }
+}
+
+
+/* Card Presentation */
+  
+h2 {
+    font-size: 20px;
+    text-align: center;
+}
+
+h3 {
+    color: #000000;
+}
+
+h1, h2 {
+    color: #007bff;
+}
+
+.wrap {
+    background-color: #fff;
+    width: 80%;
+    margin: 0 auto;
+    height: auto;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.wrap .img-artista {
+    width: 35%;
+    height: 480px;
+    margin-top: -50px;
+    margin-right: 20px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    background-size: cover;
+    background-position: 50%;
+    border: 3px solid #ccc;
+}
+
+.wrap .txt-img {
+    width: 45%;
+    padding: 20px;
+    text-align: center;
+}
+
+.wrap .txt-img .divider {
+    width: 100%;
+}
+
+.wrap .txt-img p {
+    margin-bottom: 2em;
+}
+
+.wrap .txt-img .btn {
+    text-decoration: none;
+    color: #fff;
+    background-color: #ADADAD;
+    padding: 10px 70px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.wrap .txt-img .btn-orange {
+    background-color: #FE3D14;
+}
+
+.wrap .txt-img .btn-orange:hover {
+    background-color: #FF5733;
+    font-size: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .wrap {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .wrap .img-artista,
+    .wrap .txt-img {
+        width: 90%;
+        margin: 0;
+    }
+
+    .wrap .img-artista {
+        height: 300px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+
+    .wrap .txt-img {
+        padding: 10px;
+    }
+}
+/* Banner */
+.banner {
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(90deg, #1418fe, #3396ff, #1ae8ff, #00ffee);
+    background-size: 400% 400%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: colorChange 10s ease infinite;
+}
+
+.banner h1 {
+    color: #fff;
+    font-size: 2em;
+    margin: 0;
+}
+
+/* Cards Container */
+
+.main-container {
+  width: 900px;
+}
+
+.text-container {
+  color: #546573;
+  text-align: center;
+}
+
+.main-container p {
+  color: #9c9daa;
+  font-family: 'Lato', sans-serif;
+}
+
+.services-container {
+  display: flex;
+}
+
+.service-card {
+  display: flex;
+  flex: 1;
+  background-color: #ffffff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding-bottom: 26px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.circule-img-container {
+  width: 170px;
+  border-radius: 10px;
+  display: flex;
+
+  margin: 24px 0px 18px 0px;
+}
+
+.circule-img-container img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.button-info-container {
+  text-decoration: none;
+  color: #e17982;
+  font-weight: bold;
+  padding: 6px 12px;
+  background-color: #ffffff;
+  border: solid #e17982 1px;
+  border-radius: 6px;
+}
+
+.button-info-container:hover {
+  color: #ffffff;
+  background-color: #e17982;
+}
+
+.service-margin {
+  margin-right: 24px;
+}
+
+.button-margin-top {
+  margin-top: 16px;
+}
+
+@media (max-width: 640px) {
+  .services-container {
+    flex-direction: column;
+  }
+  
+  .service-margin {
+    margin-bottom: 24px;
+    margin-right: 0px;
+  }
+  
+  .main-container {
+    padding: 0px 24px;
+  }
+  
+  .service-card {
+    flex-direction: row;
+    padding-right: 26px;
+  }
+  
+  .flex-column {
+    align-items: flex-start;
+    margin-left: 24px;
+    padding-top: 24px;
+    text-align: left;
+  }
+  
+  .circule-img-container {
+    width: 100px;
+    margin-left: 24px;
+  }
+  
+}
+
+/* pdf */
+
+
+/* El Modal (fondo) */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Mantiene el modal en su lugar */
+    z-index: 1; /* Se asegura que el modal esté por encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Anchura completa */
+    height: 100%; /* Altura completa */
+    overflow: auto; /* Habilita el scroll si es necesario */
+    background-color: rgb(0,0,0); /* Color de fondo negro */
+    background-color: rgba(0,0,0,0.4); /* Fondo con opacidad */
+}
+
+/* Contenido del Modal */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background-color: #f9f9f9;
+    border: 1px solid #c6c6c6;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 350px;
+    padding: 20px;
+    text-align: center;
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+.card p {
+    color: #555;
+}
+
+.openModalBtn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.openModalBtn:hover {
+    background-color: #0056b3;
+}
+
+/* El Modal (fondo) */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Mantiene el modal en su lugar */
+    z-index: 1; /* Se asegura que el modal esté por encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Anchura completa */
+    height: 100%; /* Altura completa */
+    overflow: auto; /* Habilita el scroll si es necesario */
+    background-color: rgb(0,0,0); /* Color de fondo negro */
+    background-color: rgba(0,0,0,0.4); /* Fondo con opacidad */
+}
+
+/* Contenido del Modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 5% desde la parte superior y centrado */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Anchura del modal */
+}
+
+/* El botón de cierre (x) */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
